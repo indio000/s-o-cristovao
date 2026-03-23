@@ -3,19 +3,324 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colégio São Cristóvão - Educação que Inspira</title>
+  <title>Colégio Estadual São Cristóvão - São José dos Pinhais</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    :root {
+      --primary: #2c7be5;
+      --primary-dark: #1e5bb8;
+      --secondary: #34c759;
+      --light: #f9fcff;
+      --dark: #1a1f36;
+      --gray: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: #333;
+      background-color: var(--light);
+    }
+
+    header {
+      background: linear-gradient(rgba(44, 123, 229, 0.75), rgba(30, 91, 184, 0.85)), url('https://static.dezeen.com/uploads/2021/05/red-house-school-curitiba-brazil-architecture-education-hero.jpg') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      background-attachment: fixed;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 1.2rem 0;
+    }
+
+    nav li {
+      margin: 0 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.6rem 0;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 70px;
+      height: 4px;
+      background: var(--secondary);
+      display: block;
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      font-size: 1.2rem;
+      color: var(--gray);
+    }
+
+    .cta-buttons {
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    .btn.secondary {
+      background: var(--secondary);
+    }
+
+    .btn.secondary:hover {
+      background: #28a745;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      margin: 3rem 0;
+    }
+
+    .gallery figure {
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .gallery figure:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .gallery figure:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery figcaption {
+      padding: 1rem;
+      background: white;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .diferenciais {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(44,123,229,0.15);
+    }
+
+    .card .emoji {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    form {
+      max-width: 700px;
+      margin: 2rem auto;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    input, textarea {
+      padding: 1rem 1.4rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      transition: border 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    button {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1.2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0.6rem 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 5rem 1rem 3rem; }
+      header h1 { font-size: 2.4rem; }
+      nav ul { flex-direction: column; gap: 1rem; }
+      nav li { margin: 0; }
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Colégio São Cristóvão</h1>
-    <p>Educação que forma o presente e inspira o futuro</p>
+    <h1>Colégio Estadual São Cristóvão</h1>
+    <p>Educação pública de qualidade em São José dos Pinhais - PR</p>
   </header>
 
   <nav>
     <ul>
+      <li><a href="#inicio" class="active">Início</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#diferenciais">Diferenciais</a></li>
       <li><a href="#galeria">Galeria</a></li>
@@ -25,78 +330,138 @@
 
   <div class="container">
 
-    <section id="sobre">
-      <h2>Bem-vindo ao nosso colégio</h2>
-      <p>
-        Um ambiente acolhedor, moderno e preparado para desenvolver todo o potencial dos alunos com carinho, excelência e inovação.
+    <section id="inicio" class="hero fade-in">
+      <h2>Bem-vindo ao Colégio Estadual São Cristóvão</h2>
+      <p>Instituição pública mantida pela SEED-PR, oferecendo Ensino Fundamental, Médio, Normal (Formação de Professores) e cursos profissionalizantes. Transformando vidas com educação gratuita e de excelência na Região Metropolitana de Curitiba.</p>
+      <div class="cta-buttons">
+        <a href="#sobre" class="btn">Saiba mais</a>
+        <a href="#contato" class="btn secondary">Fale conosco</a>
+      </div>
+    </section>
+
+    <section id="sobre" class="fade-in">
+      <h2>Sobre o Colégio</h2>
+      <p>O Colégio Estadual São Cristóvão é uma escola pública localizada em São José dos Pinhais/PR, com compromisso em oferecer educação inclusiva e de qualidade.</p>
+      <ul style="list-style: none; max-width: 700px; margin: 1.5rem auto; font-size: 1.1rem;">
+        <li>✅ Ensino Fundamental</li>
+        <li>✅ Ensino Médio</li>
+        <li>✅ Ensino Normal (Formação de Professores)</li>
+        <li>✅ Cursos Profissionalizantes (ex: Técnico em Segurança do Trabalho, Serviços Jurídicos)</li>
+      </ul>
+      <p style="text-align: center; margin-top: 2rem;">
+        <strong>Endereço:</strong> Rua Paulo Scherner, 380 - Vila Palmira, São José dos Pinhais - PR, 83040-140<br>
+        <strong>Telefone:</strong> (41) 3283-5067<br>
+        <strong>E-mail:</strong> sjpsaocristovao@seed.pr.gov.br
       </p>
     </section>
 
-    <section id="galeria">
-      <h2>Conheça nosso espaço</h2>
-      <div class="gallery">
-        <figure>
-          <img src="images/escola1.jpg" alt="Fachada moderna do colégio">
-          <figcaption>Fachada acolhedora e contemporânea</figcaption>
-        </figure>
-        <figure>
-          <img src="images/escola2.jpg" alt="Sala de aula com tecnologia">
-          <figcaption>Salas com tecnologia interativa</figcaption>
-        </figure>
-        <figure>
-          <img src="images/escola3.jpg" alt="Área de recreação colorida">
-          <figcaption>Espaço de brincadeiras e convivência</figcaption>
-        </figure>
-        <figure>
-          <img src="images/escola4.jpg" alt="Quadra esportiva">
-          <figcaption>Área esportiva completa</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="diferenciais">
-      <h2>Nossos diferenciais</h2>
+    <section id="diferenciais" class="fade-in">
+      <h2>Nossos Diferenciais</h2>
       <div class="diferenciais">
         <div class="card">
-          <div class="emoji">🎯</div>
-          <h3>Ensino Personalizado</h3>
-          <p>Turmas pequenas e plano individual para cada aluno.</p>
+          <div class="emoji">📚</div>
+          <h3>Educação Gratuita e Completa</h3>
+          <p>Do Fundamental ao Profissionalizante, tudo oferecido pela rede estadual.</p>
         </div>
         <div class="card">
-          <div class="emoji">💻</div>
-          <h3>Tecnologia Integrada</h3>
-          <p>Lousas digitais, tablets e plataforma de ensino online.</p>
+          <div class="emoji">🧑‍🏫</div>
+          <h3>Formação de Professores</h3>
+          <p>Curso Normal preparando educadores para o magistério paranaense.</p>
         </div>
         <div class="card">
-          <div class="emoji">🌱</div>
-          <h3>Projetos Interdisciplinares</h3>
-          <p>Aprendizado prático conectando várias áreas do conhecimento.</p>
+          <div class="emoji">🔧</div>
+          <h3>Cursos Técnicos</h3>
+          <p>Qualificação profissional para inserção no mercado de trabalho.</p>
         </div>
         <div class="card">
-          <div class="emoji">🧠</div>
-          <h3>Desenvolvimento Socioemocional</h3>
-          <p>Foco em inteligência emocional, liderança e valores.</p>
+          <div class="emoji">🤝</div>
+          <h3>Inclusão e Cultura de Paz</h3>
+          <p>Desenvolvimento integral com foco em valores e diversidade.</p>
         </div>
       </div>
     </section>
 
-    <section id="contato">
-      <h2>Fale com a gente</h2>
-      <form action="#" method="post">
+    <section id="galeria" class="fade-in">
+      <h2>Galeria de Fotos</h2>
+      <div class="gallery">
+        <figure>
+          <img src="images/escola1.jpg" alt="Fachada do Colégio Estadual São Cristóvão">
+          <figcaption>Fachada principal</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola2.jpg" alt="Sala de aula moderna">
+          <figcaption>Ambiente de aula</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola3.jpg" alt="Área de convivência dos alunos">
+          <figcaption>Espaço de convivência</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola4.jpg" alt="Quadra esportiva do colégio">
+          <figcaption>Quadra e atividades esportivas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contato" class="fade-in">
+      <h2>Fale Conosco</h2>
+      <form id="formContato">
         <input type="text" name="nome" placeholder="Seu nome" required>
         <input type="email" name="email" placeholder="Seu e-mail" required>
-        <input type="tel" name="telefone" placeholder="WhatsApp / Telefone">
-        <textarea name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+        <input type="tel" name="telefone" placeholder="Telefone / WhatsApp">
+        <textarea name="mensagem" rows="6" placeholder="Sua mensagem..." required></textarea>
         <button type="submit">Enviar Mensagem</button>
       </form>
+
+      <div class="contact-info">
+        <h3>Informações</h3>
+        <p><strong>Endereço:</strong> Rua Paulo Scherner, 380 - Vila Palmira, São José dos Pinhais - PR, 83040-140</p>
+        <p><strong>Telefone:</strong> (41) 3283-5067</p>
+        <p><strong>E-mail:</strong> sjpsaocristovao@seed.pr.gov.br</p>
+      </div>
     </section>
 
   </div>
 
   <footer>
-    <p>© 2026 Colégio São Cristóvão. Todos os direitos reservados.</p>
-    <p>Curitiba – PR | (41) 99999-9999 | contato@saocristovao.edu.br</p>
+    <p>© 2026 Colégio Estadual São Cristóvão. Todos os direitos reservados.</p>
+    <p>São José dos Pinhais – PR | (41) 3283-5067 | sjpsaocristovao@seed.pr.gov.br</p>
+    <p>Siga-nos: <a href="https://www.instagram.com/cesaocristovaosjp" style="color: var(--secondary);">Instagram</a> | <a href="https://www.facebook.com/sjpsaocristovao" style="color: var(--secondary);">Facebook</a></p>
   </footer>
+
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Fade-in ao scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Formulário simulado
+    document.getElementById('formContato')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>
