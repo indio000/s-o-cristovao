@@ -1,124 +1,102 @@
-<!DOCPYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-<meta charset+"UTF-8">
-<meta name+"viewport"content+"width+device-width,initial-scale+1.0">
-
-<title>Colégio São cristóvão</title>
-<style>
-body {
-font-family: Sans Serif;
-margin: 0;
-padding: 0;
-}
-header {
-background-color:
-
-#007bff;
-
-color: white;
-padding: 20px;
-text align: center;
-
-}
-nav {
-
-background color:
-#f8f9fa;
-
-padding: 10px;
-}
-nav ul {
-list style: none;
-margin: 0;
-padding: 0;
-text allign: center; /* centraliza os links */
-}
-
-nav li {
-display; inline;
-margin: 0 10px;
-}
-
-section {
-padding: 20px
-}
-
-footer{
-background-color: #333;
-color: white;
-padding: 10px;
-text-allign:center;
-}
-
-/* estilos para as imagens */
-
-.img container {
-text-allign:center; /* centraliza as imagens */
-
-margin-bottom: 20px;/* adiciona espaço abaixo das imagens */
-}
-
-.img-container img{
-max width: 50%; /*largura máxima da imagem*/
-height: auto; /*altura automática para manter a proporção*/
-border-radius: 8px; /*borda arredondada*/
-box-shadow: 0 4px 8px rgba (0,0,0,0,1); /*sombra suave*/
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colégio São Cristóvão - Educação que Inspira</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-<h1>Colégio São Cristóvão</h1>
-<p>Ensino de qualidade para um futuro brilhante</p>
-</header>
-<nav>
-<ul>
-<li><a href="#">Sobre nos</a></li>
-<li><a href="#">Cursos</a></li>
-<li><a href="#">Noticias</a></li>
-<li><a href="#">Contato</a></li>
+  <header>
+    <h1>Colégio São Cristóvão</h1>
+    <p>Educação que forma o presente e inspira o futuro</p>
+  </header>
 
-</ul>
-</nav>
-<section>
-<h2>Bem-Vindos ao Colégio São Cristóvão</h2>
-<p>Nossa escola oferece um ambiente acolhedor e inovador, com professores qualificados que visam o desenvolvimento integral dos alunos</p>
-<div class="img-container">
-<img src="escola1.jpg"alt="imagem da escola">
-</div>
+  <nav>
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#diferenciais">Diferenciais</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
 
-<div class="img-container">
-<img src="escola2.jpg"alt="imagem da escola">
-</div>
+  <div class="container">
 
-<div class="img-container">
-<img src="escola4.jpg"alt="imagem da escola">
-</div>
+    <section id="sobre">
+      <h2>Bem-vindo ao nosso colégio</h2>
+      <p>
+        Um ambiente acolhedor, moderno e preparado para desenvolver todo o potencial dos alunos com carinho, excelência e inovação.
+      </p>
+    </section>
 
-<h3>Nossos diferenciais</h3>
-<ul>
-<li>En<sino personalizado</li>
-<li>Tecnologia em sala de aula</li>
-<li>Projetos interdiciplinares</li>
-<li>foco no desenvolvimento de habilidades</li>
-</ul>
-</section>
+    <section id="galeria">
+      <h2>Conheça nosso espaço</h2>
+      <div class="gallery">
+        <figure>
+          <img src="images/escola1.jpg" alt="Fachada moderna do colégio">
+          <figcaption>Fachada acolhedora e contemporânea</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola2.jpg" alt="Sala de aula com tecnologia">
+          <figcaption>Salas com tecnologia interativa</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola3.jpg" alt="Área de recreação colorida">
+          <figcaption>Espaço de brincadeiras e convivência</figcaption>
+        </figure>
+        <figure>
+          <img src="images/escola4.jpg" alt="Quadra esportiva">
+          <figcaption>Área esportiva completa</figcaption>
+        </figure>
+      </div>
+    </section>
 
-<section id="Cursos">
-</section>
+    <section id="diferenciais">
+      <h2>Nossos diferenciais</h2>
+      <div class="diferenciais">
+        <div class="card">
+          <div class="emoji">🎯</div>
+          <h3>Ensino Personalizado</h3>
+          <p>Turmas pequenas e plano individual para cada aluno.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">💻</div>
+          <h3>Tecnologia Integrada</h3>
+          <p>Lousas digitais, tablets e plataforma de ensino online.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🌱</div>
+          <h3>Projetos Interdisciplinares</h3>
+          <p>Aprendizado prático conectando várias áreas do conhecimento.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🧠</div>
+          <h3>Desenvolvimento Socioemocional</h3>
+          <p>Foco em inteligência emocional, liderança e valores.</p>
+        </div>
+      </div>
+    </section>
 
-<section id="Notícias">
-</section>
+    <section id="contato">
+      <h2>Fale com a gente</h2>
+      <form action="#" method="post">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <input type="tel" name="telefone" placeholder="WhatsApp / Telefone">
+        <textarea name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </section>
 
-<section id="Contato">
-</section>
-<footer>
-<p>&copy;2025 Colégio São Cristóvão. Todos os direitos reservados.</p>
+  </div>
 
-</footer>
+  <footer>
+    <p>© 2026 Colégio São Cristóvão. Todos os direitos reservados.</p>
+    <p>Curitiba – PR | (41) 99999-9999 | contato@saocristovao.edu.br</p>
+  </footer>
+
 </body>
 </html>
